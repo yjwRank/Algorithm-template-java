@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Vector;
 
 /**
@@ -42,14 +41,44 @@ public class KMP {
         }
     }
 
+    public int[] KmpSearch(int[] next, String ori, String part){
+        int i=0;
+        int j=0;
+
+        Vector vec=new Vector();
+        while(i<ori.length()){
+            if(j==-1||ori.charAt(i)==part.charAt(j)){
+                i++;
+                j++;
+            }else{
+                j=next[j];
+            }
+
+            if(j==part.length()){
+//                System.out.println("loc:"+(i-j));
+                vec.add(i-j);
+                j=0;
+            }
+
+
+        }
+        int[] loc=new int[vec.size()];
+        for(int k=0;k<vec.size();k++){
+            loc[k]=Integer.parseInt(vec.get(k).toString());
+        }
+        return loc;
+    }
+
+
     public static void main(String[] args){
        // Scanner scanner=new Scanner(System.in);
-          String a="ABAC";
+          String a="abababa";
         int[] next=new int[8];
 
         KMP k=new KMP();
         k.getNext(next,a);
-        k.getPath(next,"ABABACABAC",a);
-       // System.out.println(next);
+        //k.getPath(next,"ABABACABAC",a);
+        int[] loc=k.KmpSearch(next,"ABABACABAC",a);
+      //  System.out.println(loc.length);
     }
 }
