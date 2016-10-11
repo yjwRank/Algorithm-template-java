@@ -1,0 +1,16 @@
+.*
+!.gitignore
+*.iml
+logs
+*.log
+target
+temp
+*.jar
+*.deb
+*.tar
+*.tar.gz
+*.tgz
+notify-subscription.log*
+log
+saved_images
+!.dockerignore
