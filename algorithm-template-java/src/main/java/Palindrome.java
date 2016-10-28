@@ -67,11 +67,28 @@ public class Palindrome {
         return max-1;
     }
 
-
+    public static int sum(int[] numbers)
+    {
+        int min=Integer.MAX_VALUE;
+        int max=Integer.MIN_VALUE;
+        if(numbers==null||numbers.length==0||numbers.length==1)
+            return 0;
+        int sum=0;
+        for(int i=0;i<numbers.length;i++){
+            if(numbers[i]<min){
+                min=numbers[i];
+            }
+            if(numbers[i]>max){
+                max=numbers[i];
+            }
+            sum+=numbers[i];
+        }
+        return sum-min-max;
+    }
     public static void  main(String[] args){
         Palindrome test=new Palindrome();
         System.out.println(test.getMaxPalindrome("abababa"));
         System.out.println(test.getMaxPalindrome_Manacher("abababa","#"));
-
+        System.out.println(sum(new int[] { 6, 2, 1, 8, 10}));
     }
 }
