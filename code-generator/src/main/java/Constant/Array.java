@@ -4,6 +4,9 @@ package Constant;
  * Created by yjw on 16-10-28.
  */
 public class Array {
+
+    public static final String RIGHTBRACKT="]";
+
     public static final String BYTE="byte[";
 
     public static final String SHORT="short[";
@@ -22,5 +25,5 @@ public class Array {
 
     public static final String STRING="String[";
 
-    public static final String RIGHTBRACKT="]";
+
 }
