@@ -60,4 +60,6 @@ public class Symbol {
     public static final String GT=">";
 
     public static final String DOT=".";
+
+    public static final String COMMA=",";
 }

@@ -23,4 +23,6 @@ public class Variable {
 
     public static final String STRING="String";
 
+    public static final String VOID="void";
+
 }

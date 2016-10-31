@@ -17,7 +17,8 @@ public class SystemOutPrintLine {
         if(var){
             return "System.out.println"+ Symbol.L_CURVES+str+Symbol.R_CURVES+Symbol.SMEICOLON;
         }else{
-            return "System.out.println"+ Symbol.L_CURVES+Symbol.D_QUOTATION+str+Symbol.D_QUOTATION+Symbol.R_CURVES+Symbol.SMEICOLON;
+            return "System.out.println"
+                    + Symbol.L_CURVES+Symbol.D_QUOTATION+str+Symbol.D_QUOTATION+Symbol.R_CURVES+Symbol.SMEICOLON;
         }
     }
 

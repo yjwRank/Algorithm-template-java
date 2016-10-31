@@ -18,9 +18,11 @@ public class linespace {
     /*退格*/
     public static final String BACKSPACE="\b";
 
+    public static final String TODO="//todo"+NULL_LINE;
+
     public static void main(String[] args){
         System.out.print("1");
-        System.out.print(FIGURE_SHIFT);
+        System.out.print(TODO);
         System.out.print("2");
 
     }
