@@ -25,6 +25,7 @@ public  class CLASS{
     private boolean Impletment;
     private String ImplementInterface;
     private String BaseSpace;
+    private boolean MAIN;
 
     public CLASS(){
         this.PPP=null;
@@ -38,6 +39,7 @@ public  class CLASS{
         this.Impletment=false;
         this.ImplementInterface=null;
         this.BaseSpace="";
+        this.MAIN=false;
     }
 
     public CLASS(String PPP,String CLASSNAME){
@@ -87,6 +89,11 @@ public  class CLASS{
         this.ImplementInterface=ImplemetClass;
     }
 
+    public CLASS(String PPP,String CLASSNAME,List<String>member,List<String>method,boolean Extends,String ExtendsClass,boolean ABSTRACT,boolean Final,boolean Implement,String ImplemetClass,boolean MAIN){
+       this(PPP,CLASSNAME,member,method,Extends,ExtendsClass,ABSTRACT,Final,Implement,ImplemetClass);
+        this.MAIN=MAIN;
+    }
+
     public void addMethod(FUNCTION f){
         method.add(f.getFunction());
     }
@@ -118,6 +125,15 @@ public  class CLASS{
             sb.append(BaseSpace+linespace.NULL_LINE);
         }
 
+
+        sb.append(BaseSpace+linespace.NULL_LINE);
+        if(MAIN){
+            List<String> t=new LinkedList<String>();
+            t.add("Strings[] args");
+            FUNCTION tmp=new FUNCTION(Keywords.PUBLIC,Variable.VOID,"main",t,false,BaseSpace+linespace.FIGURE_SHIFT,false,true,false);
+            sb.append(tmp.getFunction()+linespace.NULL_LINE);
+        }
+
         sb.append(Symbol.R_ANGLE_BRACKETS);
 
 
@@ -140,7 +156,7 @@ public  class CLASS{
         FUNCTION st=new FUNCTION(Keywords.PRIVATE, Variable.INT,"myfunction2",list,false,linespace.FIGURE_SHIFT,true,true);
         method.add(st.getFunction());
 
-        CLASS cl=new CLASS(Keywords.PUBLIC,"testclass",member,method,false,"",false,false,false,"");
+        CLASS cl=new CLASS(Keywords.PUBLIC,"testclass",member,method,false,"",false,false,false,"",true);
         System.out.println(cl.getCLASS());
     }
 }

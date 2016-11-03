@@ -104,9 +104,9 @@ public class FUNCTION {
         if(parameter.size()>0){
             for(int i=0;i<parameter.size();i++){
                 if(i==0)
-                    sb.append(parameter.get(i)+Symbol.COMMA);
-                else
                     sb.append(parameter.get(i));
+                else
+                    sb.append(Symbol.COMMA+parameter.get(i));
             }
         }
         sb.append(Symbol.R_CURVES);
